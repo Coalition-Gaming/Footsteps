@@ -1,0 +1,37 @@
+## Interface: 16001
+## Title: Footsteps
+## Notes: A journal of your character's journey, with a screenshot at every milestone. /footsteps
+## Author: Matthew Parke
+## Version: @project-version@
+## SavedVariablesPerCharacter: FootstepsCharDB
+## AddonCompartmentFunc: Footsteps_OnAddonCompartmentClick
+## IconTexture: Interface\Icons\inv_misc_scrollunrolled01
+## X-License: GPL-3.0
+## X-Curse-Project-ID: 1781769
+
+Libs\ForeverKit\ForeverKit.xml
+Locales\enUS.lua
+Core\Migrations.lua
+Core\Journal.lua
+Core\Played.lua
+Core\Duel.lua
+Core\Shots.lua
+Core\Interface.lua
+Core\Commands.lua
+Core\Format.lua
+Core\Maps.lua
+Core\Milestones.lua
+Core\Timeline.lua
+Core\Position.lua
+Core\Selection.lua
+Core\Ring.lua
+Secrets.lua
+Caption.lua
+Capture.lua
+Dates.lua
+Slash.lua
+Detail.lua
+Window.lua
+Options.lua
+MinimapButton.lua
+Footsteps.lua
