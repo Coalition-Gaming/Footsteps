@@ -1,0 +1,44 @@
+# Releases Footsteps. A version tag, 0.1.0 or 0.1.0-beta.1, packages the addon with
+# the BigWigs packager, uploads it to CurseForge (project 1781769, named in the TOC)
+# and creates the GitHub Release. A tag with "beta" in it is a beta file on CurseForge
+# and a pre-release here.
+#
+# The tags come from tools/release in Coalition's workspace, where Footsteps is
+# developed and tested for now: it merges the version's source and CHANGELOG.md here
+# as a pull request, then tags that commit.
+name: Release
+on:
+  push:
+    tags: ["[0-9]+.[0-9]+.[0-9]+", "[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+"]
+
+permissions:
+  contents: write # the GitHub Release
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the packager reads the version from the tag
+
+      # Without these the packager skips CurseForge and still calls it a release.
+      - name: Check that CurseForge can be reached
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+        run: |
+          [ -n "$CF_API_KEY" ] || { echo "::error::The CF_API_KEY secret is not set"; exit 1; }
+          grep -q -E '^## X-Curse-Project-ID: *[0-9]+' Footsteps.toc ||
+            { echo "::error::Footsteps.toc has no X-Curse-Project-ID"; exit 1; }
+          [ -f CHANGELOG.md ] || { echo "::error::CHANGELOG.md is missing"; exit 1; }
+
+      - uses: BigWigsMods/packager@e50a250f8705041e40f2fa1ddcb280a686d65aa0 # v2.6.1
+        with:
+          pandoc: false # only for WoWInterface, which this doesn't upload to
+        env:
+          CF_API_KEY: ${{ secrets.CF_API_KEY }}
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}

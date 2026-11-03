@@ -1,0 +1,11 @@
+package-as: Footsteps
+
+# Markdown, so that CurseForge shows the changelog's headings and lists as such.
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+
+# The README is for this repository's visitors. LICENSE stays in the zip, because
+# GPL-3.0 asks that every copy given out carries it.
+ignore:
+  - README.md

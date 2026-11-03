@@ -73,7 +73,7 @@ To run it from this repository instead, copy the repository's contents into a fo
 
 ## This repository
 
-This is Footsteps' source as it ships, starting with 0.1.0. `Libs/ForeverKit` is a small library of Coalition's that Footsteps embeds. For now Footsteps is developed in Coalition's private workspace, where its tests live, and each release's source is published here.
+This is Footsteps' source as it ships, starting with 0.1.0. `Libs/ForeverKit` is a small library of Coalition's that Footsteps embeds. For now Footsteps is developed in Coalition's private workspace, where its tests live. Each release's source and changelog are merged here, and the release's tag packages it and uploads it to CurseForge ([the release workflow](.github/workflows/release.yml)).
 
 ## License
 
