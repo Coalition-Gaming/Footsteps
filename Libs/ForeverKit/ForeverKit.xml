@@ -1,0 +1,6 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <!-- ForeverKit, embedded privately: each file adds itself to the addon's ns.Kit. -->
+  <Script file="Core\SavedData.lua"/>
+  <Script file="Core\Locale.lua"/>
+  <Script file="Events.lua"/>
+</Ui>
