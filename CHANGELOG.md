@@ -1,4 +1,10 @@
-## 0.1.0-beta.1 (2026-11-03)
+## 0.1.0 (2026-11-03)
+
+Footsteps keeps a journal of your character's journey through World of Warcraft: Forever. At each milestone, such as a new level, an achievement or the first kill of a boss, it writes an entry with the date, the place and your level, and for most milestones it takes a screenshot with a caption saying what happened, who, where and when. Type `/footsteps` to open the journal.
+
+An addon can't open files, so the journal doesn't show the screenshots themselves: each entry gives its screenshot's file name, for you to find in your Screenshots folder.
+
+Footsteps was built during Forever's beta, and in the game it has so far been seen only taking a screenshot at a new level. Everything else, from the other milestones, the lines in chat, time played and the caption to the journal window, the settings, the minimap button and the addon menu's entry, has been tested only outside the game.
 
 ### New
 
