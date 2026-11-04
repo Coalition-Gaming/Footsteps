@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## Title: Footsteps
 ## Notes: A journal of your character's journey, with a screenshot at every milestone. /footsteps
-## Author: Matthew Parke
+## Author: Coalition Gaming
 ## Version: @project-version@
 ## SavedVariablesPerCharacter: FootstepsCharDB
 ## AddonCompartmentFunc: Footsteps_OnAddonCompartmentClick
